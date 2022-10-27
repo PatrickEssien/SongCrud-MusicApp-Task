@@ -14,7 +14,7 @@ class Artiste(models.Model):
     age = models.CharField(max_length=50)
 
     def _str_(self) -> str:
-      return self.name
+      return self.last_name
 
 class Songs(models.Model):
     # creating the attributes for the songs
@@ -25,7 +25,8 @@ class Songs(models.Model):
     artiste_id = models.IntegerField(max_length=50)
     
     def _str_(self) -> str:
-      return self.name
+      return self.Title
 class lyrics(models.Model):
     Songs = models.ForeignKey(Songs, on_delete=models.CASCADE)
-    contents = models.CharField(_max_length=1000)
+    contents = models.CharField(max_length=1000)
+    
